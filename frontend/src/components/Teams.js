@@ -10,13 +10,24 @@ const Teams = () => {
   }, []);
 
   return (
-    <div>
-      <h1>Teams</h1>
-      <ul>
-        {teams.map(team => (
-          <li key={team.id}>{team.name}</li>
-        ))}
-      </ul>
+    <div className="container">
+      <h1 className="text-primary mb-4">Teams</h1>
+      <table className="table table-striped">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Members</th>
+          </tr>
+        </thead>
+        <tbody>
+          {teams.map(team => (
+            <tr key={team.id}>
+              <td>{team.name}</td>
+              <td>{team.members.join(', ')}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 };

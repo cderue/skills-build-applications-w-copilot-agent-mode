@@ -10,13 +10,24 @@ const Activities = () => {
   }, []);
 
   return (
-    <div>
-      <h1>Activities</h1>
-      <ul>
-        {activities.map(activity => (
-          <li key={activity.id}>{activity.name}</li>
-        ))}
-      </ul>
+    <div className="container">
+      <h1 className="text-primary mb-4">Activities</h1>
+      <table className="table table-striped">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          {activities.map(activity => (
+            <tr key={activity.id}>
+              <td>{activity.name}</td>
+              <td>{activity.description}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 };

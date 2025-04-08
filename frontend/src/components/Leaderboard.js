@@ -10,13 +10,24 @@ const Leaderboard = () => {
   }, []);
 
   return (
-    <div>
-      <h1>Leaderboard</h1>
-      <ul>
-        {leaders.map(leader => (
-          <li key={leader.id}>{leader.name} - {leader.score}</li>
-        ))}
-      </ul>
+    <div className="container">
+      <h1 className="text-primary mb-4">Leaderboard</h1>
+      <table className="table table-striped">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Score</th>
+          </tr>
+        </thead>
+        <tbody>
+          {leaders.map(leader => (
+            <tr key={leader.id}>
+              <td>{leader.name}</td>
+              <td>{leader.score}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 };

@@ -12,11 +12,11 @@ function App() {
   return (
     <Router>
       <div className="container">
-        <header className="logo">
-          <img src={logo} alt="OctoFit Logo" />
-          <h1>OctoFit Tracker</h1>
+        <header className="d-flex align-items-center my-4">
+          <img src={logo} alt="OctoFit Logo" className="me-3" style={{ height: '50px' }} />
+          <h1 className="text-primary">OctoFit Tracker</h1>
         </header>
-        <nav className="navbar navbar-expand-lg navbar-light bg-light">
+        <nav className="navbar navbar-expand-lg navbar-light bg-light mb-4">
           <div className="container-fluid">
             <Link className="navbar-brand" to="/">Home</Link>
             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -50,7 +50,7 @@ function App() {
             <Route path="/teams" element={<Teams />} />
             <Route path="/users" element={<Users />} />
             <Route path="/workouts" element={<Workouts />} />
-            <Route path="/" element={<h1>Welcome to OctoFit Tracker</h1>} />
+            <Route path="/" element={<h1 className="text-center text-primary">Welcome to OctoFit Tracker</h1>} />
           </Routes>
         </div>
       </div>
